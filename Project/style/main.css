@@ -3,11 +3,181 @@
           box-sizing: border-box;
 }
 
-.class {
-  color: red;
+:root {
+  --main-color: limegreen;
 }
 
 .contact {
   padding: 20px;
+  background-color: var(--main-color);
 }
+
+.header {
+  color: tomato;
+}
+
+.footer {
+  background-color: violet;
+}
+
+.copyright {
+  color: violet;
+}
+
+.sidebar {
+  background-color: crimson;
+  color: skyblue;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    padding: 20px;
+  }
+}
+.parent {
+  font-weight: bold;
+}
+.parent .child {
+  font-size: 20px;
+}
+.parent .child .grand-child {
+  font-size: 15px;
+}
+
+.parent-one,
+.parent-two {
+  padding: 20px;
+}
+.parent-one .child,
+.parent-two .child {
+  padding: 10px;
+}
+
+.parent > .child {
+  font-size: 20px;
+}
+.parent > .test {
+  font-weight: bold;
+}
+
+.parent-two > .child {
+  font-size: 20px;
+}
+.parent-two .test {
+  font-weight: bold;
+}
+.parent-two + p {
+  font-size: 15px;
+}
+
+.parent > .element-one {
+  font-size: 10px;
+}
+.parent > .element-two {
+  font-size: 10px;
+}
+.parent .not-direct-child {
+  font-weight: bold;
+}
+
+.box .title {
+  font-size: 10px;
+}
+.box .description {
+  font-size: 10px;
+}
+.box.pale {
+  color: palegreen;
+}
+.box.goldie {
+  color: gold;
+}
+.box:hover {
+  background-color: #eee;
+}
+.box:hover .title {
+  font-weight: bold;
+}
+:not(.box) {
+  font-weight: normal;
+}
+[dir=rtl] .box {
+  direction: rtl;
+}
+
+.box {
+  font-size: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.arrow-div, .box, .article, .ads {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #eee;
+}
+
+.ads {
+  font-size: 20px;
+  color: darkcyan;
+}
+
+.article {
+  font-size: 22px;
+  color: darkslateblue;
+}
+
+.page {
+  background-color: #eee;
+  color: #444;
+}
+
+.box {
+  border-radius: 10px;
+}
+
+.arrow-div {
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 50px auto;
+}
+.arrow-div::before {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  right: -40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-left-color: tomato;
+}
+
+.ad-elzero-ud637s9 {
+  font-size: 20px;
+  background-image: url("imgs/elzero.png");
+  left: 0;
+}
+
+/* This Comment Will Show In CSS file But Not In Compressed Mode */
+/*! This Comment Will Show In CSS file And In Compressed Mode */
+.box {
+  font-size: 20px;
+}
+
+/* This Comment Contains Interpolation => elzero*/
 /*# sourceMappingURL=main.css.map */

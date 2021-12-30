@@ -1,0 +1,91 @@
+/* Assignment_1 */
+$main: "school";
+$child: "box";
+$language: "en"; // English
+$gap: 20px;
+.#{$main} {
+  padding: $gap;
+  @if $language == "en" {
+    direction: ltr;
+  } @else {
+    direction: rtl;
+  }
+  margin-left: 20px;
+  .#{#{$main}-#{$child}} {
+    padding: calc(#{$gap} - 10px);
+  }
+  &:hover .#{#{$main}-#{$child}} {
+    background-color: #eee;
+  }
+}
+
+/* Assignment_2 */
+.content {
+  > .box {
+    padding: 15px;
+    > .title {
+      font-size: 18px;
+    }
+  }
+  .cat {
+    padding: 15px;
+  }
+  &.premium::before {
+    content: "Premium Box";
+  }
+  &.premium:hover {
+    background-color: #eee;
+  }
+}
+
+/* Assignment_3 */
+.class {
+  > {
+    .child {
+      padding: 10px;
+    }
+  }
+}
+.class {
+  > .child {
+    padding: 10px;
+  }
+}
+.class > {
+  .child {
+    padding: 10px;
+  }
+}
+
+/* Assignment_4 */
+.class {
+  font-weight: bold;
+  font-size: 20px;
+}
+.class {
+  font: {
+    weight: bold;
+    size: 20px;
+  }
+}
+
+/* Assignment_5 */
+.parent {
+  & + .sibling {
+    margin: auto {
+      top: 10px;
+    }
+    & ~ .last {
+      padding: 10px;
+    }
+  }
+}
+// .parent + .sibling {
+// (cuz there's [&] before [+ .sibling])
+//   margin: auto;
+//   margin-top: 10px;
+// }
+// .parent + .sibling ~ .last {
+// (cuz there's [&] before [~ .last] and it is inside of [& + .sibling])
+//   padding: 10px
+// }

@@ -1,5 +1,227 @@
 // Import Global Rules
 @use "scss/layout/global-rules";
-
 //Import contact
 @use "scss/pages/contact";
+//Import colors
+@use "scss/variables/colors";
+
+$alt_color: tomato;
+
+.header {
+  color: $alt_color;
+}
+
+.footer {
+  $alt_color: violet !global;
+  background-color: $alt_color;
+}
+
+.copyright {
+  color: $alt_color;
+}
+
+.sidebar {
+  background-color: colors.$main_color;
+  color: colors.$primary_color;
+}
+
+$max_mobile: "max-width: 767px";
+
+@media ($max_mobile) {
+  .sidebar {
+    padding: 20px;
+  }
+}
+
+// Nesting & Parent Element
+.parent {
+  font-weight: bold;
+  .child {
+    font-size: 20px;
+    .grand-child {
+      font-size: 15px;
+    }
+  }
+}
+
+.parent-one,
+.parent-two {
+  padding: 20px;
+  .child {
+    padding: 10px;
+  }
+}
+
+.parent > {
+  .child {
+    font-size: 20px;
+  }
+  .test {
+    font-weight: bold;
+  }
+}
+
+.parent-two {
+  > .child {
+    font-size: 20px;
+  }
+  .test {
+    font-weight: bold;
+  }
+  + p {
+    font-size: 15px;
+  }
+}
+
+.parent {
+  > {
+    .element-one {
+      font-size: 10px;
+    }
+    .element-two {
+      font-size: 10px;
+    }
+  }
+  .not-direct-child {
+    font-weight: bold;
+  }
+}
+
+.box {
+  .title {
+    font-size: 10px;
+  }
+  .description {
+    font-size: 10px;
+  }
+  &.pale {
+    color: palegreen;
+  }
+  &.goldie {
+    color: gold;
+  }
+  &:hover {
+    background-color: #eee;
+  }
+  &:hover .title {
+    font-weight: bold;
+  }
+  :not(&) {
+    font-weight: normal;
+  }
+  [dir="rtl"] & {
+    direction: rtl;
+  }
+}
+
+// Property Declarations and Placeholder
+.box {
+  font-size: 20px;
+  font: {
+    size: 15px;
+    weight: bold;
+  }
+  padding: 10px;
+  margin: auto {
+    top: 10px;
+    bottom: 15px;
+  }
+}
+
+%main-box {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #eee;
+}
+
+.ads {
+  @extend %main-box;
+  font-size: 20px;
+  color: darkcyan;
+}
+
+.article {
+  @extend %main-box;
+  font-size: 22px;
+  color: darkslateblue;
+}
+
+$theme: "light";
+.page {
+  @if $theme == "light" {
+    background-color: #eee;
+    color: #444;
+  } @else {
+    background-color: #444;
+    color: #eee;
+  }
+}
+
+$rounded: true;
+.box {
+  @extend %main-box;
+  border-radius: if($rounded, 10px, null);
+}
+
+$direction: "right";
+.arrow-div {
+  @extend %main-box;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 50px auto;
+  &::before {
+    content: "";
+    position: absolute;
+    border: 20px solid transparent;
+    @if $direction == "top" {
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-color: tomato;
+    } @else if $direction == "left" {
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-right-color: tomato;
+    } @else if $direction == "bottom" {
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: tomato;
+    } @else if $direction == "right" {
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left-color: tomato;
+    } @else {
+      @error 'this direction #{$direction} is not valid';
+    }
+  }
+}
+
+// Interpolation
+$company: "elzero";
+$position: "left";
+.ad-#{$company}-#{unique-id()} {
+  font-size: 20px;
+  background-image: url("imgs/#{$company}.png");
+  #{$position}: 0;
+}
+
+// Comments =>
+// This Comment Will Not Show In CSS file
+/* This Comment Will Show In CSS file But Not In Compressed Mode */
+/*! This Comment Will Show In CSS file And In Compressed Mode */
+
+.box /* Multiple 
+Lines 
+Comment */ {
+  font-size: 20px; // Inline Comment
+}
+
+/* This Comment Contains Interpolation => #{$company}*/
