@@ -1,0 +1,173 @@
+/* Assignment_1 */
+.element-left, .element-bottom, .element-right, .element-top {
+  width: 300px;
+  height: 300px;
+  margin: 40px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eee;
+  position: relative;
+}
+
+.element-top::before {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  top: -40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-bottom-color: crimson;
+}
+
+.element-right::before {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  right: -40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-left-color: crimson;
+}
+
+.element-bottom::before {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  bottom: -40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-top-color: crimson;
+}
+
+.element-left::before {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  left: -40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-right-color: crimson;
+}
+
+/* Assignment_2 */
+.col-1 {
+  width: 6.25%;
+}
+
+.col-2 {
+  width: 12.5%;
+}
+
+.col-3 {
+  width: 18.75%;
+}
+
+.col-4 {
+  width: 25%;
+}
+
+.col-5 {
+  width: 31.25%;
+}
+
+.col-6 {
+  width: 37.5%;
+}
+
+.col-7 {
+  width: 43.75%;
+}
+
+.col-8 {
+  width: 50%;
+}
+
+.col-9 {
+  width: 56.25%;
+}
+
+.col-10 {
+  width: 62.5%;
+}
+
+.col-11 {
+  width: 68.75%;
+}
+
+.col-12 {
+  width: 75%;
+}
+
+.col-13 {
+  width: 81.25%;
+}
+
+.col-14 {
+  width: 87.5%;
+}
+
+.col-15 {
+  width: 93.75%;
+}
+
+.col-16 {
+  width: 100%;
+}
+
+/* Assignment_3 */
+.books {
+  width: 20px;
+  font-size: 18;
+  border-bottom: 2px solid crimson;
+  color: #eee;
+}
+
+.games {
+  width: 30px;
+  font-size: 18;
+  border-bottom: 2px solid limegreen;
+  color: #eee;
+}
+
+.dvds {
+  width: 20px;
+  border-bottom: 2px solid skyblue;
+  color: #eee;
+}
+
+/* Assignment_4 */
+.col-100 {
+  width: 100;
+  height: 200;
+}
+
+.col-200 {
+  width: 200px;
+  height: 400px;
+}
+
+.col-400 {
+  width: 400px;
+  height: 800px;
+}
+
+.col-800 {
+  width: 800px;
+  height: 1600px;
+}
+
+.col-1600 {
+  width: 1600px;
+  height: 3200px;
+}

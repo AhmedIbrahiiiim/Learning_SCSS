@@ -5,7 +5,7 @@
   margin-left: 20px;
 }
 .school .school-box {
-  padding: calc(20px - 10px);
+  padding: 10px;
 }
 .school:hover .school-box {
   background-color: #eee;
@@ -60,4 +60,3 @@
 .parent + .sibling ~ .last {
   padding: 10px;
 }
-/*# sourceMappingURL=main.css.map */

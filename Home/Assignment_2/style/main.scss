@@ -1,0 +1,104 @@
+/* Assignment_1 */
+@mixin arrow($direction) {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  @if $direction == "top" {
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-color: crimson;
+  } @else if $direction == "right" {
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left-color: crimson;
+  } @else if $direction == "bottom" {
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-color: crimson;
+  } @else if $direction == "left" {
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right-color: crimson;
+  } @else {
+    @error "#{$direction} is not a valid direction";
+  }
+}
+%main {
+  width: 300px;
+  height: 300px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  position: relative;
+}
+.element-top {
+  @extend %main;
+  &::before {
+    @include arrow("top");
+  }
+}
+.element-right {
+  @extend %main;
+  &::before {
+    @include arrow("right");
+  }
+}
+.element-bottom {
+  @extend %main;
+  &::before {
+    @include arrow("bottom");
+  }
+}
+.element-left {
+  @extend %main;
+  &::before {
+    @include arrow("left");
+  }
+}
+
+/* Assignment_2 */
+$gridCols: 16;
+@for $i from 1 through $gridCols {
+  .col-#{$i} {
+    width: percentage($i / $gridCols);
+  }
+}
+
+/* Assignment_3 */
+$names: "books" 20px crimson 18, "games" 30px limegreen 18, "dvds" 20px skyblue;
+@each $name, $width, $color, $font in $names {
+  .#{$name} {
+    width: $width;
+    font-size: #{$font};
+    border-bottom: 2px solid $color;
+    color: #eee;
+  }
+}
+
+/* Assignment_4 */
+$num: 2;
+$start: 100;
+@function double($size) {
+  @return $size * $num;
+}
+@for $i from 1 to 6 {
+  @if $i == 1 {
+    $start: $start;
+    .col-#{$start} {
+      width: #{$start};
+      height: double($start);
+    }
+  } @else {
+    $start: $start * 2;
+    .col-#{$start} {
+      width: #{$start}px;
+      height: #{double($start)}px;
+    }
+  }
+}

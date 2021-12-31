@@ -1,9 +1,14 @@
+// 01~10
 // Import Global Rules
 @use "scss/layout/global-rules";
 //Import contact
 @use "scss/pages/contact";
 //Import colors
 @use "scss/variables/colors";
+//Import mixins
+@use "scss/helpers/mixins" as *;
+//Import functions
+@use "scss/helpers/functions" as *;
 
 $alt_color: tomato;
 
@@ -225,3 +230,146 @@ Comment */ {
 }
 
 /* This Comment Contains Interpolation => #{$company}*/
+
+// 11~19
+//Mixin & Include
+ul.links {
+  @include list-reset();
+}
+.circle-100 {
+  @include circle(100px);
+  background-color: crimson;
+  color: white;
+}
+.circle-200 {
+  @include circle(200px);
+  background-color: crimson;
+  color: white;
+}
+.center-circle {
+  @include circle(400px);
+  @include centering();
+}
+
+// Loop => For
+@for $i from 1 through 10 {
+  .class-#{$i} {
+    font-size: #{$i + 10px};
+  }
+}
+
+$dimensions: 0;
+@for $i from 1 through 10 {
+  .circle-#{100 + $dimensions} {
+    width: $dimensions + 100px;
+    height: $dimensions + 100px;
+    border-radius: 50%;
+  }
+  $dimensions: $dimensions + 100;
+}
+
+// Each + Maps
+$themes: crimson, lime, skyblue, gold;
+@each $themes-each in $themes {
+  .#{$themes-each}-theme {
+    .product {
+      background-color: wheat;
+      border-bottom: 2px solid $themes-each;
+      .title {
+        color: $themes-each;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+$socials: (
+  "facebook": skyblue,
+  "youtube": crimson,
+  "github": darkgrey,
+  "twitter": lightseagreen,
+);
+@each $name, $color in $socials {
+  .#{$name} {
+    background-color: $color;
+    color: wheat;
+    &::before {
+      content: $name;
+    }
+  }
+}
+
+$classes: "one" 20px crimson, "two" 15px lime, "three" 22px skyblue;
+
+@each $class, $font, $color in $classes {
+  .#{$class} {
+    font-size: $font;
+    background-color: $color;
+    color: wheat;
+    padding: $font / 2;
+  }
+}
+
+// Loop => while
+$start: 1;
+@while $start <= 10 {
+  .width-#{100 * $start} {
+    width: $start * 100;
+    height: ($start * 100px) / 2;
+  }
+  $start: $start + 1;
+}
+
+// Create Bootstrap Grid System
+$grid_cols: 12;
+@for $i from 1 through $grid_cols {
+  .col-#{$i} {
+    width: percentage($i / $grid_cols);
+  }
+}
+
+// Function
+$width: 200px;
+.element {
+  width: $width;
+  height: half($width);
+  top: calculate(50px, 100px, 200px);
+}
+
+// Mixin with content
+.black-overlay {
+  @include overlay(black, 0.5);
+}
+
+@include keyF(fade-in) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@include keyF(go-up) {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 100px;
+  }
+}
+
+// If Condition + Mixin + content
+.media {
+  @include breakpoints(mobile) {
+    font-size: 16px;
+  }
+  @include breakpoints(small) {
+    font-size: 18px;
+  }
+  @include breakpoints(medium) {
+    font-size: 20px;
+  }
+  @include breakpoints(large) {
+    font-size: 22px;
+  }
+}

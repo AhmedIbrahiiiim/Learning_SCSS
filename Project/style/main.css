@@ -167,7 +167,7 @@
   border-left-color: tomato;
 }
 
-.ad-elzero-ud637s9 {
+.ad-elzero-ub6828d {
   font-size: 20px;
   background-image: url("imgs/elzero.png");
   left: 0;
@@ -180,4 +180,394 @@
 }
 
 /* This Comment Contains Interpolation => elzero*/
-/*# sourceMappingURL=main.css.map */
+ul.links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.circle-100 {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: crimson;
+  color: white;
+}
+
+.circle-200 {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: crimson;
+  color: white;
+}
+
+.center-circle {
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.class-1 {
+  font-size: 11px;
+}
+
+.class-2 {
+  font-size: 12px;
+}
+
+.class-3 {
+  font-size: 13px;
+}
+
+.class-4 {
+  font-size: 14px;
+}
+
+.class-5 {
+  font-size: 15px;
+}
+
+.class-6 {
+  font-size: 16px;
+}
+
+.class-7 {
+  font-size: 17px;
+}
+
+.class-8 {
+  font-size: 18px;
+}
+
+.class-9 {
+  font-size: 19px;
+}
+
+.class-10 {
+  font-size: 20px;
+}
+
+.circle-100 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.circle-200 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.circle-300 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.circle-400 {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+
+.circle-500 {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+}
+
+.circle-600 {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+}
+
+.circle-700 {
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+}
+
+.circle-800 {
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+}
+
+.circle-900 {
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+}
+
+.circle-1000 {
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+}
+
+.crimson-theme .product {
+  background-color: wheat;
+  border-bottom: 2px solid crimson;
+}
+.crimson-theme .product .title {
+  color: crimson;
+  font-weight: bold;
+}
+
+.lime-theme .product {
+  background-color: wheat;
+  border-bottom: 2px solid lime;
+}
+.lime-theme .product .title {
+  color: lime;
+  font-weight: bold;
+}
+
+.skyblue-theme .product {
+  background-color: wheat;
+  border-bottom: 2px solid skyblue;
+}
+.skyblue-theme .product .title {
+  color: skyblue;
+  font-weight: bold;
+}
+
+.gold-theme .product {
+  background-color: wheat;
+  border-bottom: 2px solid gold;
+}
+.gold-theme .product .title {
+  color: gold;
+  font-weight: bold;
+}
+
+.facebook {
+  background-color: skyblue;
+  color: wheat;
+}
+.facebook::before {
+  content: "facebook";
+}
+
+.youtube {
+  background-color: crimson;
+  color: wheat;
+}
+.youtube::before {
+  content: "youtube";
+}
+
+.github {
+  background-color: darkgrey;
+  color: wheat;
+}
+.github::before {
+  content: "github";
+}
+
+.twitter {
+  background-color: lightseagreen;
+  color: wheat;
+}
+.twitter::before {
+  content: "twitter";
+}
+
+.one {
+  font-size: 20px;
+  background-color: crimson;
+  color: wheat;
+  padding: 10px;
+}
+
+.two {
+  font-size: 15px;
+  background-color: lime;
+  color: wheat;
+  padding: 7.5px;
+}
+
+.three {
+  font-size: 22px;
+  background-color: skyblue;
+  color: wheat;
+  padding: 11px;
+}
+
+.width-100 {
+  width: 100;
+  height: 50px;
+}
+
+.width-200 {
+  width: 200;
+  height: 100px;
+}
+
+.width-300 {
+  width: 300;
+  height: 150px;
+}
+
+.width-400 {
+  width: 400;
+  height: 200px;
+}
+
+.width-500 {
+  width: 500;
+  height: 250px;
+}
+
+.width-600 {
+  width: 600;
+  height: 300px;
+}
+
+.width-700 {
+  width: 700;
+  height: 350px;
+}
+
+.width-800 {
+  width: 800;
+  height: 400px;
+}
+
+.width-900 {
+  width: 900;
+  height: 450px;
+}
+
+.width-1000 {
+  width: 1000;
+  height: 500px;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.element {
+  width: 200px;
+  height: 100px;
+  top: 350px;
+}
+
+.black-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes go-up {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 100px;
+  }
+}
+@keyframes go-up {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .media {
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .media {
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .media {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .media {
+    font-size: 22px;
+  }
+}
