@@ -1,7 +1,7 @@
 /* Assignment_1 */
 .element-left, .element-bottom, .element-right, .element-top {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   margin: 40px auto;
   display: -webkit-box;
   display: -ms-flexbox;
